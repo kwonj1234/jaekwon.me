@@ -1,4 +1,7 @@
-import Image from 'next/image'
+import Link from 'next/link'
+
+import Divider from '@/components/Divider'
+import ExperienceCard from '@/components/ExperienceCard'
 
 export default function Page() {
 
@@ -114,7 +117,32 @@ export default function Page() {
 
 	return (
 		<div className='Experience content-centered'>
-      <h1>Professional Experience</h1>
+      <div>
+        <div className='row justify-center'>
+          <h1>Professional Experience</h1>
+        </div>
+        <div className='row justify-center'>
+          <p>You can download a copy of my resume <Link
+            className='text-blue-500'
+            href="/jaehwi_kwon_resume.pdf" 
+            target="_blank"
+            rel="noopener noreferrer"
+            download>here</Link>
+          </p>
+        </div>
+      </div>
+      <Divider></Divider>
+      {
+        workHistory.map((experience) => (
+          <ExperienceCard
+            leftTitle={experience.company}
+            leftSubTitle={experience.dates}
+            rightTitle={experience.title}
+            rightSubTitle={experience.description}
+          ></ExperienceCard>
+        ))
+      }
+
 		</div>
 	)
 }
