@@ -32,6 +32,24 @@ h2 {
   margin-top: 3rem;
 }
 
+.Experience .experience-section {
+  margin-right: 240px;
+}
+
+.ExperienceCard {
+  width: 80%;
+  margin-bottom: 24px;
+}
+
+.ExperienceCard .leftColumn {
+  width: 50%;
+  padding-right: 36px;
+}
+
+.ExperienceCard .rightColumn {
+  width: 50%;
+}
+
 .row {
   display: flex;
   align-content: center;
@@ -39,6 +57,10 @@ h2 {
 
 .justify-center {
   justify-content: center;
+}
+
+.justify-end {
+  justify-content: end;
 }
 
 .width-40 {

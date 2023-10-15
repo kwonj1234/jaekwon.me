@@ -132,17 +132,20 @@ export default function Page() {
         </div>
       </div>
       <Divider></Divider>
-      {
-        workHistory.map((experience) => (
-          <ExperienceCard
-            leftTitle={experience.company}
-            leftSubTitle={experience.dates}
-            rightTitle={experience.title}
-            rightSubTitle={experience.description}
-          ></ExperienceCard>
-        ))
-      }
-
+      <div className='experience-section'>
+        {
+          workHistory.map((experience) => (
+            <div className='row justify-center'>
+              <ExperienceCard
+                leftTitle={experience.company}
+                leftSubTitle={experience.dates}
+                rightTitle={experience.title}
+                rightSubTitle={experience.description}
+              ></ExperienceCard>
+            </div>
+          ))
+        }
+      </div>
 		</div>
 	)
 }

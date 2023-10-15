@@ -12,8 +12,12 @@ export default function ExperienceCard(props: ExperienceCardProps) {
   return (
     <div className="row ExperienceCard">
       <div className="leftColumn">
-        <h1>{leftTitle}</h1>
-        <p>{leftSubTitle}</p>
+        <div className="row justify-end">
+          <h2>{leftTitle}</h2>
+        </div>
+        <div className="row justify-end">
+          <p>{leftSubTitle}</p>        
+        </div>
       </div>
       <div className="rightColumn">
         <h2>{rightTitle}</h2>
