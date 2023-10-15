@@ -11,6 +11,21 @@ h2 {
   font-size: 20px
 }
 
+.hero {
+  height: 100%;
+}
+
+.banner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background-image: url(../../public/images/austin-skyline-lady-bird-town-lake.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
 .circular-image { 
   border-radius: 50%;
 }

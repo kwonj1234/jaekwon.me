@@ -6,6 +6,9 @@ export default function NavBar() {
 
 	return (
 		<span className="nav-bar">
+      <span>
+        &nbsp;&nbsp;<Link href={`/`}>Home</Link>&nbsp;&nbsp;/
+      </span>
 			{navButtons.map((nav, i) => (
 				<span>
 					&nbsp;&nbsp;<Link href={`/${nav.replace(/\s/g, "")}`}>{nav}</Link>&nbsp;&nbsp;
