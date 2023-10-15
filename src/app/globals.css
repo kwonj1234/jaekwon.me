@@ -93,3 +93,7 @@ h2 {
   justify-content: center;
   flex-direction: column;
 }
+
+.Projects {
+  margin-top: 3rem;
+}
