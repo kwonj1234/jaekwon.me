@@ -6,8 +6,12 @@ export default function NavBar() {
 
 	return (
 		<span className="nav-bar">
-			{navButtons.map(nav => (
-				<Link href={`/${nav.replace(/\s/g, "")}`}>{nav}</Link>
+			{navButtons.map((nav, i) => (
+				<span>
+					&nbsp;&nbsp;<Link href={`/${nav.replace(/\s/g, "")}`}>{nav}</Link>&nbsp;&nbsp;
+					{ i !== navButtons.length - 1 && "/"}  
+				</span>
+				
 			))}
 		</span>
 	)

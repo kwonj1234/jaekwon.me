@@ -2,12 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 20px
+}
+
 .circular-image { 
   border-radius: 50%;
 }
 
 .nav-bar {
-  display: inline-block;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .AboutMe {

@@ -16,6 +16,8 @@ export default function Page() {
 					/>
 				</div>
 				<div className='width-40 content-centered'>
+					<h1>Jaehwi Kwon</h1>
+					<em><h2>Software Engineer based in Austin, TX with roots in Queens, NY</h2></em>
 					<p>
 						Environmental engineer, healthcare provider, air quality inspector turned software developer. 
 						I began learning Python on my own prior to enrolling in Byte Academy in 2020 where I learned
