@@ -8,14 +8,14 @@ export default function Projects() {
   const projects: {
     title: String,
     url: String,
-    imageStyle: String,
+    image: String,
     imageDescription: String,
     description: any,
   }[] = [
     {
       title: 'Personal Website V1',
       url: 'https://github.com/kwonj1234/my_website',
-      imageStyle: 'my_website-image',
+      image: '/images/my_website.png',
       imageDescription: 'Personal Website V1 screenshot',
       description: `The first version of my personal website! My first task after graduating from Byte Academy was 
       to create my own personal websites to show off all my skills and showcase my style. Deployed using AWS Amplify.`,
@@ -23,7 +23,7 @@ export default function Projects() {
     {
       title: 'RecipeDex',
       url: 'https://github.com/kwonj1234/recipedex_frontend',
-      imageStyle: 'recipedex-image',
+      image: '/images/recipedex_screenshot.jpg',
       imageDescription: 'RecipeDex screenshot',
       description: <p>RecipeDex is a web application that provides users a place to scrape recipes
       from the internet and store them for future reference without having to have
@@ -31,6 +31,7 @@ export default function Projects() {
       recipe-scrapers, a python package that uses BeautifulSoup4, to scrape and 
       format recipes from 56 different websites. You can find my contribution to
       the recipe-scrapers tool <Link
+        className='text-blue-500'
         href="https://github.com/hhursev/recipe-scrapers/blob/master/recipe_scrapers/delish.py" 
         target="_blank" 
         rel="noopener noreferrer"
@@ -41,7 +42,7 @@ export default function Projects() {
     {
       title: 'Pretty City',
       url: 'https://github.com/mbraly01/Pretty_City_Frontend',
-      imageStyle: 'prettyCity-image',
+      image: '/images/prettyCity_screenshot.png',
       imageDescription: 'Pretty City screenshot',
       description: `A product similar to the Citizen mobile app, PrettyCity used the NYC311 API to give New Yorkers a 
       visual representation of complaints in their area. Using MaterialUI and Google Maps we showed pins on a map that 
@@ -60,6 +61,19 @@ export default function Projects() {
         </div>
       </div>
       <Divider></Divider>
+      <div className='project-section'>
+        {
+          projects.map(project => (
+            <ProjectCard
+              title={project.title}
+              url={project.url}
+              image={project.image}
+              imageDescription={project.imageDescription}
+              description={project.description}
+            ></ProjectCard>
+          ))
+        }
+      </div>
     </div>
   )
 }

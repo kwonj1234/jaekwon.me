@@ -97,3 +97,24 @@ h2 {
 .Projects {
   margin-top: 3rem;
 }
+
+.Projects .left-column {
+  position: relative;
+  width: 50%;
+  padding-right: 36px;
+}
+
+.Projects .right-column {
+  width: 50%;
+}
+
+.project-image {
+  border-radius: 5%;
+  height: 200px;
+  width: 200px;
+}
+
+.ProjectCard { 
+  width: 80%;
+  margin-bottom: 24px;
+}
