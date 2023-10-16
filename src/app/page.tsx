@@ -8,7 +8,7 @@ const roboto = Roboto({
 export default function Home() {
 
   return (
-    <main className={`${roboto.className}flex min-h-screen flex-col items-center justify-between p-24 banner`}>
+    <main className={`${roboto.className}flex flex-col items-center justify-between p-24 banner`}>
       <div className="bannerText text-outline">
         <p>Hey, I'm</p>
         <h1>Jaehwi Kwon</h1>

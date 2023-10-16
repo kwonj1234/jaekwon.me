@@ -102,18 +102,6 @@ export default function Page() {
         modeling those into Revit models.`
       },
   ]
-  
-  const education: {
-    school: String,
-    dates: String,
-    degree: String,
-    major: String
-  } = {
-    school: 'CUNY City College of New York',
-    dates: 'Graduated May 2017',
-    degree: "Bacherlor's of Engineering",
-    major: "Earth System Science and Environmental Engineering"
-  }
 
 	return (
 		<div className='Experience content-centered'>

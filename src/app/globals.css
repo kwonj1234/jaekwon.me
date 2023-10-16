@@ -11,19 +11,25 @@ h2 {
   font-size: 20px
 }
 
+.body {
+  height: 97vh;
+}
+
 .hero {
   height: 100%;
 }
 
 .banner {
+  position: absolute;
   display: flex;
   flex-direction: column;
-  height: 100%;
-  width: 100%;
+  height: 97vh;
+  width: 100vw;
   background-image: url(../../public/images/austin-skyline-lady-bird-town-lake.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  background-position: center;
 }
 
 .circular-image { 
@@ -37,6 +43,7 @@ h2 {
 .nav-bar {
   display: flex;
   justify-content: flex-end;
+  height: 3vh;
 }
 
 .AboutMe {
@@ -109,12 +116,24 @@ h2 {
 }
 
 .project-image {
+  margin-top: 36px;
   border-radius: 5%;
-  height: 200px;
-  width: 200px;
+  height: 100px;
+  width: 300px;
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: none;
 }
 
 .ProjectCard { 
   width: 80%;
   margin-bottom: 24px;
+}
+
+.icon-container {
+  margin-top: 24px;
+}
+
+.icon-linkedin {
+  margin-right: 24px;
 }
