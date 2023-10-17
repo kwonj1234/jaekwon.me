@@ -6,6 +6,7 @@ import ProjectCard from '@/components/ProjectCard'
 export default function Projects() {
 
   const projects: {
+    id: number,
     title: String,
     url: String,
     image: String,
@@ -13,6 +14,7 @@ export default function Projects() {
     description: any,
   }[] = [
     {
+      id: 1,
       title: 'Personal Website V1',
       url: 'https://github.com/kwonj1234/my_website',
       image: '/images/my_website.png',
@@ -21,6 +23,7 @@ export default function Projects() {
       to create my own personal websites to show off all my skills and showcase my style. Deployed using AWS Amplify.`,
     },
     {
+      id: 2,
       title: 'RecipeDex',
       url: 'https://github.com/kwonj1234/recipedex_frontend',
       image: '/images/recipedex_screenshot.jpg',
@@ -40,6 +43,7 @@ export default function Projects() {
       </Link>.</p>,
     },
     {
+      id: 3,
       title: 'Pretty City',
       url: 'https://github.com/mbraly01/Pretty_City_Frontend',
       image: '/images/prettyCity_screenshot.png',

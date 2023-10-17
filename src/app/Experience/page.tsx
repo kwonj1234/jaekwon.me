@@ -6,12 +6,14 @@ import ExperienceCard from '@/components/ExperienceCard'
 export default function Page() {
 
   const workHistory: {
+    id: number,
     company: String, 
     dates: String, 
     title: String, 
     description: String
   }[] = [
       {
+        id: 1,
         company: 'Syft AI',
         dates: 'August 2022 - October 2023',
         title: 'Software Engineer',
@@ -27,6 +29,7 @@ export default function Page() {
       },
 
       {
+        id: 2,
         company: 'Cynopsis Solutions',
         dates: 'July 2021 - August 2022',
         title: 'Associate Software Engineer',
@@ -39,6 +42,7 @@ export default function Page() {
       },
 
       {
+        id: 3,
         company: 'Freelancing',
         dates: 'March 2021 - March 2022',
         title: 'Freelancer',
@@ -49,6 +53,7 @@ export default function Page() {
       },
 
       {
+        id:3, 
         company: 'SpryteLabs',
         dates: 'June 2020 - June 2021',
         title: 'Software Engineer',
@@ -61,6 +66,7 @@ export default function Page() {
       },
 
       {
+        id: 4,
         company: 'PlateRate',
         dates: 'October 2020 - March 2021',
         title: 'Web Developer',
@@ -71,6 +77,7 @@ export default function Page() {
       },
 
       {
+        id: 5,
         company: 'Nulife Med LLC',
         dates: 'February 2018 - January 2020',
         title: 'Sales Service Representative',
@@ -82,6 +89,7 @@ export default function Page() {
       },
 
       {
+        id: 6,
         company: 'J.C. Broderick & Associates, Inc.',
         dates: 'June 2018 - September 2018',
         title: 'Air Sampling Technician (Intern)',
@@ -93,6 +101,7 @@ export default function Page() {
       },
 
       {
+        id: 7,
         company: 'Global Resource Management Consultancy Inc.',
         dates: 'June 2016 - September 2016',
         title: 'Intern',
@@ -123,7 +132,7 @@ export default function Page() {
       <div className='experience-section'>
         {
           workHistory.map((experience) => (
-            <div className='row justify-center'>
+            <div className='row justify-center' key={experience.id}>
               <ExperienceCard
                 leftTitle={experience.company}
                 leftSubTitle={experience.dates}
