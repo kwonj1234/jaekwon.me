@@ -42,17 +42,6 @@ export default function Projects() {
         here
       </Link>.</p>,
     },
-    {
-      id: 3,
-      title: 'Pretty City',
-      url: 'https://github.com/mbraly01/Pretty_City_Frontend',
-      image: '/images/prettyCity_screenshot.png',
-      imageDescription: 'Pretty City screenshot',
-      description: `A product similar to the Citizen mobile app, PrettyCity used the NYC311 API to give New Yorkers a 
-      visual representation of complaints in their area. Using MaterialUI and Google Maps we showed pins on a map that 
-      represented all complaints reported to the 311.  Originally envisioned for infrastructure damage, such as potholes 
-      or fallen trees, we expanded what users can see and added a filter.`,
-    },
   ]
 
 

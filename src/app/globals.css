@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  position: relative;
+  min-height: 100%;
+}
 
 h1 {
   font-size: 40px;
@@ -48,6 +52,11 @@ h2 {
 
 .AboutMe {
   height: 97vh;
+}
+
+.Education {
+  height: 100vh;
+  margin-top: 3rem;
 }
 
 .Experience {
@@ -103,6 +112,7 @@ h2 {
 
 .Projects {
   margin-top: 3rem;
+  height: 100vh;
 }
 
 .Projects .left-column {
@@ -138,7 +148,8 @@ h2 {
   margin-right: 24px;
 }
 
-.footer {
+footer {
+  padding-bottom: 24px;
   padding-top: 24px;
   background-color: black;
   color: white;

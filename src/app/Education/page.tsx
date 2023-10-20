@@ -28,7 +28,7 @@ export default function Education() {
   ]
 
   return (
-    <div className="Experience content-centered">
+    <div className="Education">
       <div className='row justify-center'>
         <h1>Education</h1>
       </div>
