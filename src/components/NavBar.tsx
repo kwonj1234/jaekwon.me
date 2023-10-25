@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export default function NavBar() {
 
-	const navButtons: string[] = ['About Me', 'Experience', 'Projects', 'Education']
+	const navButtons: string[] = ['Experience', 'Projects', 'Education']
 
 	return (
 		<span className="nav-bar">

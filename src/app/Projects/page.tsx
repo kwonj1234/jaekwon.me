@@ -14,7 +14,16 @@ export default function Projects() {
     description: any,
   }[] = [
     {
-      id: 1,
+      id: 3,
+      title: 'Personal Website V2',
+      url: 'https://github.com/kwonj1234/jaekwon.me',
+      image: '/images/my_website_v2.jpg',
+      imageDescription: 'jaekwon.me screenshot',
+      description: `The current version of my personal website! I updated my website as a personal project to teach myself 
+      how to use Next.js with TypeScript. Deployed using AWS Amplify.`,
+    },
+    {
+      id: 2,
       title: 'Personal Website V1',
       url: 'https://github.com/kwonj1234/my_website',
       image: '/images/my_website.png',
@@ -23,7 +32,7 @@ export default function Projects() {
       to create my own personal websites to show off all my skills and showcase my style. Deployed using AWS Amplify.`,
     },
     {
-      id: 2,
+      id: 1,
       title: 'RecipeDex',
       url: 'https://github.com/kwonj1234/recipedex_frontend',
       image: '/images/recipedex_screenshot.jpg',
