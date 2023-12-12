@@ -17,7 +17,7 @@ export default function Projects() {
       id: 3,
       title: 'Personal Website V2',
       url: 'https://github.com/kwonj1234/jaekwon.me',
-      image: '/images/my_website_v2.jpg',
+      image: '/images/my_website_v2.png',
       imageDescription: 'jaekwon.me screenshot',
       description: `The current version of my personal website! I updated my website as a personal project to teach myself 
       how to use Next.js with TypeScript. Deployed using AWS Amplify.`,
