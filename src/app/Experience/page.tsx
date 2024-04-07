@@ -13,6 +13,15 @@ export default function Page() {
     description: String
   }[] = [
       {
+        id: 9,
+        company: 'Freelancing',
+        dates: 'February 2024 - Present',
+        title: 'Software Engineer',
+        description: `As a freelance software engineer, I was tasked with improving the training data for a generative AI
+        model that specialized in creating SQL queries from plain english.`
+      },
+
+      {
         id: 8,
         company: 'Syft AI',
         dates: 'August 2022 - October 2023',
