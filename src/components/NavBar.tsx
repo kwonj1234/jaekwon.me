@@ -72,8 +72,8 @@ export default function NavBar() {
 					</ListItem>
 				</Link>
         {navButtons.map((text, index) => (
-					<Link href={`/${text.replace(/\s/g, "")}`}>
-						<ListItem key={text} disablePadding>
+					<Link key={text} href={`/${text.replace(/\s/g, "")}`}>
+						<ListItem disablePadding>
 							<ListItemButton>
 								<ListItemIcon>
 									{listIcon(text)}
@@ -103,7 +103,7 @@ export default function NavBar() {
 				))}
 			</div>
 			<React.Fragment key="Drawer">
-				<Button onClick={toggleDrawer(!isDrawerOpen)}>
+				<Button className="md:hidden" onClick={toggleDrawer(!isDrawerOpen)}>
 					<MenuIcon />
 					<SwipeableDrawer
             open={isDrawerOpen}

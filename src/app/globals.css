@@ -23,37 +23,12 @@ h2 {
   height: 100%;
 }
 
-.banner {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  height: 97vh;
-  width:100%;
-  background-image: url(../../public/images/austin-skyline-lady-bird-town-lake.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
-}
-
 .circular-image { 
   border-radius: 50%;
 }
 
 .divider {
   width: 80%;
-}
-
-@media (max-width: 768px) {
-  .AboutMe {
-    margin-top: 30px;
-    height: 97vh;
-    text-align: center;
-  }
-}
-
-.AboutMe {
-  height: 97vh;
 }
 
 .Education {

@@ -1,5 +1,7 @@
 import Image from 'next/image'
 
+import './AboutMe.css'
+
 export default function Page() {
 
   const subTitle: String = `Software Engineer based in Austin, TX with roots in Queens, NY`
@@ -13,7 +15,7 @@ export default function Page() {
 
 	return (
 		<div className='AboutMe'>
-			<div className=''>
+			<div className='profile-icon'>
 				<Image
 					className='circular-image m-auto'
 					src="/profile_picture.jpeg"
@@ -23,11 +25,9 @@ export default function Page() {
 					priority
 				/>
 			</div>
-			<div className=''>
-				<h1>Jaehwi Kwon</h1>
-				<br/>
-				<em><h2>{subTitle}</h2></em>
-				<br/>
+			<div className='profile-description'>
+				<h1 className='md:mb-10'>Jaehwi Kwon</h1>
+				<em className='md:mb-10'><h2>{subTitle}</h2></em>
 				<p>
 					{descrip}
 				</p>

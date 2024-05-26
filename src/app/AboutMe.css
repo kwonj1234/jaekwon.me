@@ -2,14 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
+@media (min-width: 768px) {
+    .AboutMe {
+        margin:auto;
+        height: 97vh;
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    .profile-icon{
+        width: 50%;
+    }
+
+    .profile-description {
+        width: 50%;
+        text-align: left;
+    }
+}
+
 @media (max-width: 768px) {
     .AboutMe {
-      margin-top: 30px;
-      height: 97vh;
-      text-align: center;
+        margin-top: 30px;
+        height: 97vh;
+        text-align: center;
     }
-  }
-  
-  .AboutMe {
-    height: 97vh;
-  }
+}
