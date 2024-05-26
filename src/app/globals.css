@@ -44,12 +44,6 @@ h2 {
   width: 80%;
 }
 
-.nav-bar {
-  display: flex;
-  justify-content: flex-end;
-  height: 3vh;
-}
-
 @media (max-width: 768px) {
   .AboutMe {
     margin-top: 30px;
