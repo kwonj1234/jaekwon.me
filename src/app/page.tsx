@@ -12,25 +12,25 @@ export default function Page() {
   video games and triathlon sports.` 
 
 	return (
-		<div className='AboutMe content-centered'>
-			<div className='row justify-center'>
-				<div className='mr-10'>
-					<Image
-						className='circular-image'
-						src="/profile_picture.jpeg"
-						alt="Jaehwi Kwon"
-						width={300}
-						height={24}
-						priority
-					/>
-				</div>
-				<div className='width-40 content-centered'>
-					<h1>Jaehwi Kwon</h1>
-					<em><h2>{subTitle}</h2></em>
-					<p>
-            {descrip}
-					</p>
-				</div>
+		<div className='AboutMe'>
+			<div className=''>
+				<Image
+					className='circular-image m-auto'
+					src="/profile_picture.jpeg"
+					alt="Jaehwi Kwon"
+					width={300}
+					height={24}
+					priority
+				/>
+			</div>
+			<div className=''>
+				<h1>Jaehwi Kwon</h1>
+				<br/>
+				<em><h2>{subTitle}</h2></em>
+				<br/>
+				<p>
+					{descrip}
+				</p>
 			</div>
 		</div>
 	)

@@ -50,6 +50,14 @@ h2 {
   height: 3vh;
 }
 
+@media (max-width: 768px) {
+  .AboutMe {
+    margin-top: 30px;
+    height: 97vh;
+    text-align: center;
+  }
+}
+
 .AboutMe {
   height: 97vh;
 }
