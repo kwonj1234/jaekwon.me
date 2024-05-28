@@ -3,15 +3,25 @@
 @tailwind utilities;
 
 @media (min-width: 768px) {
-    .AboutMe {
-        margin:auto;
+    h1 {
+        font-size: 40px;
+    }
+
+    .page {
         height: 97vh;
+    }
+
+    .AboutMe {
         display: flex;
-        flex-wrap: nowrap;
+        justify-content: center;
+        margin:auto;
+        position: absolute;
+        top: 25%;
     }
 
     .profile-icon{
-        width: 50%;
+        width: 20%;
+        margin-right: 12px;
     }
 
     .profile-description {
@@ -21,6 +31,10 @@
 }
 
 @media (max-width: 768px) {
+    h1 {
+        font-size: 40px;
+    }
+
     .AboutMe {
         margin-top: 30px;
         height: 97vh;
