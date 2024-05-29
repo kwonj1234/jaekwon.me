@@ -2,17 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  position: relative;
-  min-height: 100%;
-}
+@layer base {
+  html {
+    position: relative;
+    min-height: 100%;
+  }
+  
+  h1 {
+    font-size: 40px;
+  }
+  
+  h2 {
+    font-size: 20px
+  }
 
-h1 {
-  font-size: 40px;
-}
-
-h2 {
-  font-size: 20px
+  footer {
+    padding-bottom: 24px;
+    padding-top: 24px;
+    background-color: black;
+    color: white;
+  }
 }
 
 .body {
@@ -31,36 +40,66 @@ h2 {
   width: 80%;
 }
 
-.Education {
-  height: 100vh;
-  margin-top: 3rem;
-}
-
 .Experience {
   margin-top: 3rem;
 }
 
 .Experience .experience-section {
-  margin-right: 240px;
+  margin: auto;
+}
+
+@media (min-width: 768px) {
+  .ExperienceCard {
+    width: 80%;
+    margin-bottom: 24px;
+    box-sizing: border-box;
+    border: 1px solid rgb(190, 190, 190);
+    border-radius: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+    padding: 12px;
+  }
+
+  .ExperienceCard .leftColumn {
+    width: 100%;
+    padding-right: 0;
+  }
+  
+  .ExperienceCard .rightColumn {
+    width: 100%;
+  }
 }
 
 .ExperienceCard {
   width: 80%;
   margin-bottom: 24px;
+  box-sizing: border-box;
+  border: 1px solid rgb(190, 190, 190);
+  border-radius: 25px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+  padding: 12px;
 }
 
 .ExperienceCard .leftColumn {
-  width: 50%;
+  width: 40%;
   padding-right: 36px;
 }
 
 .ExperienceCard .rightColumn {
-  width: 50%;
+  width: 45%;
+}
+
+.Education {
+  height: 100vh;
+  margin-top: 3rem;
 }
 
 .row {
   display: flex;
-  align-content: center;
+}
+
+.wrap {
+  flex-wrap: wrap;
+  text-align: center;
 }
 
 .justify-center {
@@ -68,7 +107,8 @@ h2 {
 }
 
 .justify-end {
-  justify-content: end;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .width-40 {
@@ -123,11 +163,4 @@ h2 {
 
 .icon-linkedin {
   margin-right: 24px;
-}
-
-footer {
-  padding-bottom: 24px;
-  padding-top: 24px;
-  background-color: black;
-  color: white;
 }
