@@ -7,10 +7,6 @@
         font-size: 40px;
     }
 
-    .page {
-        height: 97vh;
-    }
-
     .AboutMe {
         display: flex;
         justify-content: center;
