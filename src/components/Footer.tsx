@@ -3,7 +3,7 @@ import Image from "next/image"
 
 export default function Footer() {
   return (
-    <footer className="bottom-0">
+    <footer className="">
       <div className='row justify-center'>
         <h1>Contact Me</h1>
       </div>
