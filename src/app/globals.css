@@ -133,21 +133,37 @@ footer {
   flex-direction: column;
 }
 
-.Projects {
-  margin-top: 3rem;
+@media (min-width:0px) and (max-width: 768px) {
+  .Projects {
+    margin-top: 3rem;
+    text-align: center;
+    margin-bottom: 24px;
+  }
 }
 
-.Projects .left-column {
-  position: relative;
-  width: 50%;
-  padding-right: 36px;
-}
+@media (min-width: 768px) {
+  .Projects {
+    margin-top: 3rem;
+  }
 
-.Projects .right-column {
-  width: 50%;
+  .Projects .left-column {
+    position: relative;
+    width: 50%;
+    padding-right: 36px;
+  }
+  
+  .Projects .right-column {
+    width: 50%;
+  }  
+
+  .ProjectCard { 
+    width: 80%;
+    margin-bottom: 24px;
+  }
 }
 
 .project-image {
+  margin: auto;
   margin-top: 36px;
   border-radius: 5%;
   height: 100px;
@@ -155,11 +171,6 @@ footer {
   background-repeat: no-repeat;
   background-position: center;
   object-fit: none;
-}
-
-.ProjectCard { 
-  width: 80%;
-  margin-bottom: 24px;
 }
 
 .icon-container {
