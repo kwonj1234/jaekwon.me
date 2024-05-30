@@ -18,14 +18,15 @@ import HomeIcon from '@mui/icons-material/Home';
 import WorkIcon from '@mui/icons-material/Work';
 import CastleIcon from '@mui/icons-material/Castle';
 import SchoolIcon from '@mui/icons-material/School';
+import AbcIcon from '@mui/icons-material/Abc';
 
 import './NavBar.css';
 
-type iconType = "Home" | "Experience" | "Projects" | "Education";
+type iconType = "Home" | "Experience" | "Projects" | "Education" | "Wordle";
 
 export default function NavBar() {
 	const [isDrawerOpen, setDrawerOpen] = React.useState<boolean>(false);
-	const navButtons: iconType[] = ['Experience', 'Projects', 'Education'];
+	const navButtons: iconType[] = ['Experience', 'Projects', 'Education', 'Wordle'];
 
 	const toggleDrawer =(open: boolean) =>
 	(event: React.KeyboardEvent | React.MouseEvent) => {
@@ -50,6 +51,8 @@ export default function NavBar() {
 			return <CastleIcon />
 		} else if (icon === "Education") {
 			return <SchoolIcon />
+		} else if (icon === "Wordle") {
+			return <AbcIcon />
 		}
 	}
 
