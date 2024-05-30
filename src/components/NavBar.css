@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media (max-width: 768px) {
+    .nav-bar {
+        display: flex;
+        height: 3vh;
+    }
+  }
+  
+.nav-bar {
+    display: flex;
+    justify-content: flex-end;
+    height: 3vh;
+  }

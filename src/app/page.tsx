@@ -1,5 +1,7 @@
 import Image from 'next/image'
 
+import './AboutMe.css'
+
 export default function Page() {
 
   const subTitle: String = `Software Engineer based in Austin, TX with roots in Queens, NY`
@@ -12,11 +14,11 @@ export default function Page() {
   video games and triathlon sports.` 
 
 	return (
-		<div className='AboutMe content-centered'>
-			<div className='row justify-center'>
-				<div className='mr-10'>
+		<div className='page'>
+			<div className='AboutMe'>
+				<div className='profile-icon'>
 					<Image
-						className='circular-image'
+						className='circular-image m-auto'
 						src="/profile_picture.jpeg"
 						alt="Jaehwi Kwon"
 						width={300}
@@ -24,11 +26,11 @@ export default function Page() {
 						priority
 					/>
 				</div>
-				<div className='width-40 content-centered'>
-					<h1>Jaehwi Kwon</h1>
-					<em><h2>{subTitle}</h2></em>
+				<div className='profile-description'>
+					<h1 className=''>Jaehwi Kwon</h1>
+					<em className='md:mb-10'><h2>{subTitle}</h2></em>
 					<p>
-            {descrip}
+						{descrip}
 					</p>
 				</div>
 			</div>

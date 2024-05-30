@@ -13,9 +13,9 @@ export default function ProjectCard(props: ProjectCardProps) {
 
   const {title, url, image, imageDescription, description } = props
   return (
-    <div className="row ProjectCard">
+    <div className="ProjectCard">
       <div className='left-column'>
-        <div className='row justify-end'>
+        <div className='justify-end-column'>
           <Link href={url} target="_blank" rel="noopener noreferrer">
             <Image 
               className='project-image'

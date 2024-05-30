@@ -124,7 +124,7 @@ export default function Page() {
 	return (
 		<div className='Experience content-centered'>
       <div>
-        <div className='row justify-center'>
+        <div className='row wrap justify-center'>
           <h1>Professional Experience</h1>
         </div>
         <div className='row justify-center'>

@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media (min-width: 768px) {
+    h1 {
+        font-size: 40px;
+    }
+
+    .page {
+        height: 97vh;
+    }
+
+    .AboutMe {
+        display: flex;
+        justify-content: center;
+        margin:auto;
+        position: absolute;
+        top: 25%;
+    }
+
+    .profile-icon{
+        width: 20%;
+        margin-right: 12px;
+    }
+
+    .profile-description {
+        width: 50%;
+        text-align: left;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 40px;
+    }
+
+    .AboutMe {
+        margin-top: 30px;
+        height: 97vh;
+        text-align: center;
+    }
+}
