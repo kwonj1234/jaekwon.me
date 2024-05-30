@@ -15,8 +15,6 @@
         display: flex;
         justify-content: center;
         margin:auto;
-        position: absolute;
-        top: 25%;
     }
 
     .profile-icon{

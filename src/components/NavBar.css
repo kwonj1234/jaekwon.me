@@ -2,15 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
     .nav-bar {
-        display: flex;
-        height: 3vh;
+        justify-content: flex-end;
     }
   }
   
 .nav-bar {
     display: flex;
-    justify-content: flex-end;
     height: 3vh;
   }
