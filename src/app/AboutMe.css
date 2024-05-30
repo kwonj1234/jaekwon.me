@@ -6,11 +6,15 @@
     h1 {
         font-size: 40px;
     }
-
+    
+    .page {
+        display: flex;
+        height: 97vh;
+        align-content: center;
+    }
     .AboutMe {
         display: flex;
         justify-content: center;
-        height: 97vh;
         margin:auto;
     }
 
