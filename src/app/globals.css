@@ -111,6 +111,14 @@ footer {
   justify-content: center;
 }
 
+.space-evenly {
+  justify-content: space-evenly;
+}
+
+.space-around {
+  justify-content: space-around;
+}
+
 .justify-end {
   display: flex;
   justify-content: flex-end;
@@ -188,4 +196,50 @@ footer {
 
 .icon-linkedin {
   margin-right: 24px;
+}
+
+.letter-border {
+  border: 1px solid rgb(190, 190, 190); 
+  border-radius: 5px;
+  width: 60px;
+  height: 60px;
+  margin: 6px 6px;
+}
+
+.Wordle {
+  margin-top: 24px;
+  align-content: center;
+}
+
+.words-container {
+  display: flex;
+  justify-content: center;
+}
+
+.word {
+  margin: auto;
+}
+
+.keyboard-row {
+  margin-bottom: 12px;
+}
+
+.key-container {
+  display: flex;
+  justify-content: center;
+  border: 1px solid rgb(190, 190, 190); 
+  border-radius: 5px;
+  background-color: rgb(190, 190, 190);
+  font-weight: bold;
+  margin-right: 6px;
+}
+
+.small-key {
+  width: 28px;
+  font-size: 24px;
+}
+
+.large-key {
+  width: 56px;
+  font-size: 12px;
 }

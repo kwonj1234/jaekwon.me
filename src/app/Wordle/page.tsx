@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react"
 import axios from "axios";
 
+import Keyboard from "@/components/Keyboard";
 import CircularProgress from '@mui/material/CircularProgress';
 
 export default function Wordle() {
@@ -15,8 +16,10 @@ export default function Wordle() {
 
   useEffect(() => {
     const getRandomWord = async () => {
-      const word = await axios.get(randomWordAPI)
-      console.log(word)
+      setIsLoading(true)
+      const resp = await axios.get(randomWordAPI)
+      setTargetWord(resp["data"][0])
+      setIsLoading(false)
     }
   
     getRandomWord()
@@ -24,12 +27,37 @@ export default function Wordle() {
 
   return (
     <div className='Wordle'>
+      <div className="words-container">
       {
         isLoading ?
           <CircularProgress className="m-auto"/>
         :
-          <div></div>
+          <div>
+          {
+            [...Array(6)].map((el, i) => 
+              <div className="word row" key={`word-${i}`}>
+                {
+                  [...Array(5)].map((el, i) => 
+                    <CheckLetter key={`letter-${i}`}></CheckLetter>
+                  )
+                }
+              </div>
+            )
+          }
+          </div>
       }
+      </div>
+      <Keyboard
+        onClick={() => {}}
+      ></Keyboard>
+    </div>
+  )
+}
+
+function CheckLetter() {
+  return (
+    <div className="letter-border">
+
     </div>
   )
 }

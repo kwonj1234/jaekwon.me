@@ -1,8 +1,8 @@
 interface ExperienceCardProps {
-  leftTitle: String,
-  leftSubTitle: String,
-  rightTitle: String,
-  rightSubTitle: String,
+  leftTitle: string,
+  leftSubTitle: string,
+  rightTitle: string,
+  rightSubTitle: string,
 }
 
 export default function ExperienceCard(props: ExperienceCardProps) {
