@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
   html {
     position: relative;
     min-height: 100%;
@@ -16,12 +15,11 @@
     font-size: 20px
   }
 
-  footer {
-    padding-bottom: 24px;
-    padding-top: 24px;
-    background-color: black;
-    color: white;
-  }
+footer {
+  bottom: 0;
+  padding: 24px 12px;
+  background-color: black;
+  color: white;
 }
 
 .body {
@@ -48,27 +46,6 @@
   margin: auto;
 }
 
-@media (min-width: 768px) {
-  .ExperienceCard {
-    width: 80%;
-    margin-bottom: 24px;
-    box-sizing: border-box;
-    border: 1px solid rgb(190, 190, 190);
-    border-radius: 25px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
-    padding: 12px;
-  }
-
-  .ExperienceCard .leftColumn {
-    width: 100%;
-    padding-right: 0;
-  }
-  
-  .ExperienceCard .rightColumn {
-    width: 100%;
-  }
-}
-
 .ExperienceCard {
   width: 80%;
   margin-bottom: 24px;
@@ -80,12 +57,41 @@
 }
 
 .ExperienceCard .leftColumn {
-  width: 40%;
-  padding-right: 36px;
+  margin-bottom: 24px;
 }
 
 .ExperienceCard .rightColumn {
-  width: 45%;
+}
+
+.justify-end-column {
+
+}
+
+@media (min-width: 768px) {
+  .ExperienceCard {
+    width: 700px;
+    display: flex;
+    margin-bottom: 24px;
+    box-sizing: border-box;
+    border: 1px solid rgb(190, 190, 190);
+    border-radius: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+    padding: 12px;
+  }
+  
+  .ExperienceCard .leftColumn {
+    width: 40%;
+    padding-right: 36px;
+  }
+  
+  .ExperienceCard .rightColumn {
+    width: 60%;
+  }
+
+  .justify-end-column {
+    display: flex;
+    justify-content: flex-end;
+  }
 }
 
 .Education {
@@ -129,7 +135,6 @@
 
 .Projects {
   margin-top: 3rem;
-  height: 100vh;
 }
 
 .Projects .left-column {
