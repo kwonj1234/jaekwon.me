@@ -28,6 +28,42 @@ export default function Wordle() {
     getRandomWord()
   }, [])
 
+  useEffect(() => {
+    const handleKeyboardEvent = (e: any) => {
+      if (e.key === "Backspace" && currentWord.length > 0) {
+        setCurrentWord(word => {
+          console.log(`delete: ${word}`)
+          return word.substring(0, word.length - 1)
+        })
+        console.log(currentWord)
+  
+      } else if (currentWord.length < 5 && alphabet.includes(e.key)) {
+        console.log(currentWord.length)
+        setCurrentWord(word => {
+          console.log(`old word: ${word}`)
+          console.log(`new word: ${word + e.key}`)
+          return word + e.key
+        })
+  
+      } else if (e.key === "Enter") {
+        console.log(usedWords)
+        let temp = [...usedWords]
+        temp.push(currentWord)
+        setUsedWords([...temp])
+        setCurrentWord("")
+      }
+    }
+    window.addEventListener("keydown", handleKeyboardEvent)
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyboardEvent)
+    }
+  }, [currentWord, usedWords])
+
+  useEffect(() => {
+    console.log(currentWord)
+  }, [currentWord])
+
   const getCorrectLetter = (wordIdx: number, letterIdx: number) => {
     if (wordIdx === usedWords.length) {
       if (letterIdx < currentWord.length) {
@@ -42,14 +78,21 @@ export default function Wordle() {
   }
 
   const updateCurrentWord = (letter: string) => {
-    console.log([currentWord, targetWord])
-
+    console.log(`${currentWord} ${letter}`)
     if (letter === "Backspace" && currentWord.length > 0) {
-      setCurrentWord(word => word.substring(0, word.length - 2))
+      setCurrentWord(word => {
+        console.log(`delete: ${word}`)
+        return word.substring(0, word.length - 1)
+      })
+      console.log(currentWord)
 
     } else if (currentWord.length < 5 && alphabet.includes(letter)) {
-      setCurrentWord(word => word + letter)
-      console.log(currentWord)
+      console.log(currentWord.length)
+      setCurrentWord(word => {
+        console.log(`old word: ${word}`)
+        console.log(`new word: ${word + letter}`)
+        return word + letter
+      })
 
     } else if (letter === "Enter") {
       console.log(usedWords)
