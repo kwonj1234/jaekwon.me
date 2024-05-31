@@ -11,7 +11,8 @@ const alphabet = "abcdefghijklmnopqrstuvwxyz";
 export default function Wordle() {
   const [isLoading , setIsLoading] = useState<boolean>(true);
   const [targetWord, setTargetWord] = useState<string>("");
-  const [currentWords, setCurrentWords] = useState<Array<string>>([""]);
+  const [usedWords, setUsedWords] = useState<Array<string>>([]);
+  const [currentWord, setCurrentWord] = useState<string>("");
 
   const randomWordAPI: string = "https://random-word-api.herokuapp.com/word?length=5";
   const checkWordAPI: string = "https://api.dictionaryapi.dev/api/v2/entries/en/";
@@ -28,33 +29,34 @@ export default function Wordle() {
   }, [])
 
   const getCorrectLetter = (wordIdx: number, letterIdx: number) => {
-    if (wordIdx <= currentWords.length - 1) {
-      if (letterIdx <= currentWords[wordIdx].length - 1) {
-        return currentWords[wordIdx][letterIdx]
+    if (wordIdx === usedWords.length) {
+      if (letterIdx < currentWord.length) {
+        return currentWord[letterIdx]
+      }
+    } else if (wordIdx <= usedWords.length - 1) {
+      if (letterIdx < usedWords[wordIdx].length) {
+        return usedWords[wordIdx][letterIdx]
       }
     }
     return null
   }
 
-  const updateCurrentWords = (letter: string) => {
-    let i = currentWords.length - 1
-    if (letter === "Backspace") {
-      setCurrentWords(currentWords.map((word, idx) => {
-        if (idx === i) {
-          return word.substring(0, word.length - 1)
-        }
-        return word
-      }))
+  const updateCurrentWord = (letter: string) => {
+    console.log([currentWord, targetWord])
 
-    } else if (alphabet.includes(letter) && currentWords[i].length < 5) {
-      console.log(letter)
-      console.log(currentWords)
-      setCurrentWords(currentWords.map((word, idx) => {
-        if (idx === i) {
-          return word + letter
-        } 
-        return word
-      }))
+    if (letter === "Backspace" && currentWord.length > 0) {
+      setCurrentWord(word => word.substring(0, word.length - 2))
+
+    } else if (currentWord.length < 5 && alphabet.includes(letter)) {
+      setCurrentWord(word => word + letter)
+      console.log(currentWord)
+
+    } else if (letter === "Enter") {
+      console.log(usedWords)
+      let temp = [...usedWords]
+      temp.push(currentWord)
+      setUsedWords([...temp])
+      setCurrentWord("")
     }
   }
 
@@ -81,7 +83,7 @@ export default function Wordle() {
       }
       </div>
       <Keyboard
-        onClick={updateCurrentWords}
+        onClick={updateCurrentWord}
       ></Keyboard>
     </div>
   )

@@ -11,11 +11,15 @@ const qwertyKeyboard = [
   ["Enter", "z", "x", "c", "v", "b", "n", "m", "Backspace"]
 ]
 export default function Keyboard(props: KeyboardProps) {
-
+  const keyboardEvent = (e: any) => {
+    props.onClick(e.key)
+  }
   useEffect(() => {
-    window.addEventListener("keydown", (e) => {
-      props.onClick(e.key)
-    })
+    window.addEventListener("keydown", keyboardEvent)
+
+    return () => {
+      window.removeEventListener("keydown", keyboardEvent)
+    }
   }, [])
 
 
