@@ -13,6 +13,7 @@ export default function Wordle() {
   const [targetWord, setTargetWord] = useState<string>("");
   const [usedWords, setUsedWords] = useState<Array<string>>([]);
   const [currentWord, setCurrentWord] = useState<string>("");
+  const [apiError, setAPIError] = useState<boolean>(false);
 
   const randomWordAPI: string = "https://random-word-api.herokuapp.com/word?length=5";
   const checkWordAPI: string = "https://api.dictionaryapi.dev/api/v2/entries/en/";
@@ -20,8 +21,14 @@ export default function Wordle() {
   useEffect(() => {
     const getRandomWord = async () => {
       setIsLoading(true)
-      const resp = await axios.get(randomWordAPI)
-      setTargetWord(resp["data"][0])
+
+      let resp;
+      try {
+        resp = await axios.get(randomWordAPI)
+        setTargetWord(resp["data"][0])
+      } catch (error) {
+        console.log(error)
+      }
       setIsLoading(false)
     }
   
