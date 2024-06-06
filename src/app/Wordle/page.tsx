@@ -128,8 +128,15 @@ interface CheckLetterProps {
 
 function CheckLetter(props: CheckLetterProps) {
   return (
-    <div className="letter-border">
-      {props.letter}
+    <div className="letter-card letter-border">
+      <div className="letter-card-content">
+        <div className="front">
+          {props.letter}
+        </div>
+        <div className="back">
+          {props.letter}
+        </div>
+      </div>
     </div>
   )
 }
