@@ -198,6 +198,26 @@ footer {
   margin-right: 24px;
 }
 
+.Wordle {
+  height: 97vh;
+  margin-top: 24px;
+  align-content: center;
+}
+
+.words-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.word {
+  margin: auto;
+}
+
+.letter-card {
+
+}
+
 .letter-border {
   border: 1px solid rgb(190, 190, 190); 
   border-radius: 5px;
@@ -206,21 +226,18 @@ footer {
   margin: 6px 6px;
 }
 
-.Wordle {
-  margin-top: 24px;
+.letter-card-content {
+  height: 100%;
+}
+
+.front {
+  height: 100%;
+  font-size: 48px;
+  text-align: center;
   align-content: center;
-}
-
-.words-container {
-  display: flex;
-  justify-content: center;
-}
-
-.word {
   margin: auto;
 }
-
-.front,
+/* .front,
 .back {
   position: absolute;
   height: 100%;
@@ -237,7 +254,7 @@ footer {
 .letter-card:hover .letter-card-content {
   transform: rotateY( 180deg ) ;
   transition: transform 0.5s;
-}
+} */
 
 .keyboard-row {
   margin-bottom: 12px;

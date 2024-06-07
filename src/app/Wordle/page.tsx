@@ -36,7 +36,19 @@ export default function Wordle() {
   }, [])
 
   useEffect(() => {
-    const handleKeyboardEvent = (e: any) => {
+    const isCurrentWordValid = async () => {
+      let resp;
+      try {
+        resp = await axios.get(checkWordAPI + currentWord)
+        console.log(resp)
+        return true
+      } catch (err) {
+        console.log(err)
+        return false
+      }
+    }
+
+    const handleKeyboardEvent = async (e: any) => {
       if (e.key === "Backspace" && currentWord.length > 0) {
         setCurrentWord(word => {
           return word.substring(0, word.length - 1)
@@ -48,10 +60,16 @@ export default function Wordle() {
         })
   
       } else if (e.key === "Enter") {
-        let temp = [...usedWords]
-        temp.push(currentWord)
-        setUsedWords([...temp])
-        setCurrentWord("")
+        if (currentWord.length === 5) {
+          let isValidWord = await isCurrentWordValid()
+
+          if (isValidWord) {
+            let temp = [...usedWords]
+            temp.push(currentWord)
+            setUsedWords([...temp])
+            setCurrentWord("")
+          }
+        }
       }
     }
     window.addEventListener("keydown", handleKeyboardEvent)
@@ -131,10 +149,7 @@ function CheckLetter(props: CheckLetterProps) {
     <div className="letter-card letter-border">
       <div className="letter-card-content">
         <div className="front">
-          {props.letter}
-        </div>
-        <div className="back">
-          {props.letter}
+          <h1>{props.letter?.toUpperCase()}</h1>
         </div>
       </div>
     </div>
