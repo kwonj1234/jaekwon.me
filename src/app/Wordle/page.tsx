@@ -33,11 +33,15 @@ export default function Wordle() {
         let temp: tempObject = {}
         for (let i = 0; i < resp["data"][0].length; i++) {
           if (resp["data"][0][i] in temp) {
-            temp[resp["data"][0][1]] += 1;
+            temp[resp["data"][0][i]] += 1;
+          } else {
+            temp[resp["data"][0][i]] = 1;
           }
         }
-        setDeconstructedWord({ ...temp });
-        
+        setDeconstructedWord(prev => {
+          return { ...temp }
+        });
+
       } catch (error) {
         console.log(error)
       }
@@ -45,8 +49,13 @@ export default function Wordle() {
     }
   
     getRandomWord()
+    console.log(deconstructedWord)
   }, [])
 
+  useEffect(() => {
+    console.log(targetWord);
+    console.log(deconstructedWord)
+  }, [deconstructedWord, targetWord])
   useEffect(() => {
     const isCurrentWordValid = async () => {
       let resp;
