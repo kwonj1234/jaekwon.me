@@ -142,17 +142,12 @@ export default function Wordle() {
           <div>
           {
             [...Array(6)].map((el, wordIndex) => 
-              <div className="word row" key={`word-${wordIndex}`}>
-                {
-                  [...Array(5)].map((el, letterIndex) => 
-                    <CheckLetter 
-                      key={`letter-${(5*wordIndex) + letterIndex}`} 
-                      letter={getCorrectLetter(wordIndex, letterIndex)}
+              <CheckWord
+                usedWords={usedWords}
+                deconstructedWord={deconstructedWord}
+                currentWord={currentWord}
 
-                    ></CheckLetter>
-                  )
-                }
-              </div>
+              ></CheckWord>
             )
           }
           </div>
@@ -165,8 +160,48 @@ export default function Wordle() {
   )
 }
 
+interface CheckWordProps {
+  usedWords: Array<string>,
+  deconstructedWord: object,
+  currentWord: string,
+  word: string | null,
+  wordIndex: number,
+  check: boolean
+}
+
+function CheckWord(props: CheckWordProps) {
+
+  const getCorrectLetter = (wordIdx: number, letterIdx: number) => {
+    if (wordIdx === props.usedWords.length) {
+      if (letterIdx < props.currentWord.length) {
+        return props.currentWord[letterIdx]
+      }
+    } else if (wordIdx <= props.usedWords.length - 1) {
+      if (letterIdx < props.usedWords[wordIdx].length) {
+        return props.usedWords[wordIdx][letterIdx]
+      }
+    }
+    return null
+  }
+
+  return (
+    <div className="word row">
+      {
+        [...Array(5)].map((el, letterIndex) => 
+          <CheckLetter 
+            key={`letter-${(5*props.wordIndex) + letterIndex}`} 
+            letter={getCorrectLetter(props.wordIndex, letterIndex)}
+            check={props.wordIndex <= props.usedWords.length}
+          ></CheckLetter>
+        )
+      }
+    </div>
+  )
+}
+
 interface CheckLetterProps {
-  letter: string | null
+  letter: string | null,
+  check: boolean | null
 }
 
 function CheckLetter(props: CheckLetterProps) {
