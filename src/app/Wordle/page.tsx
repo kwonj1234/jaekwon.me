@@ -11,6 +11,7 @@ const alphabet = "abcdefghijklmnopqrstuvwxyz";
 export default function Wordle() {
   const [isLoading , setIsLoading] = useState<boolean>(true);
   const [targetWord, setTargetWord] = useState<string>("");
+  const [deconstructedWord, setDeconstructedWord] = useState<Object>({});
   const [usedWords, setUsedWords] = useState<Array<string>>([]);
   const [currentWord, setCurrentWord] = useState<string>("");
   const [apiError, setAPIError] = useState<boolean>(false);
@@ -26,6 +27,17 @@ export default function Wordle() {
       try {
         resp = await axios.get(randomWordAPI)
         setTargetWord(resp["data"][0])
+
+        // Deconstruct the target word and save the deconstructed word
+        type tempObject = { [key: string]: number};
+        let temp: tempObject = {}
+        for (let i = 0; i < resp["data"][0].length; i++) {
+          if (resp["data"][0][i] in temp) {
+            temp[resp["data"][0][1]] += 1;
+          }
+        }
+        setDeconstructedWord({ ...temp });
+        
       } catch (error) {
         console.log(error)
       }
@@ -124,7 +136,11 @@ export default function Wordle() {
               <div className="word row" key={`word-${wordIndex}`}>
                 {
                   [...Array(5)].map((el, letterIndex) => 
-                    <CheckLetter key={`letter-${letterIndex}`} letter={getCorrectLetter(wordIndex, letterIndex)}></CheckLetter>
+                    <CheckLetter 
+                      key={`letter-${(5*wordIndex) + letterIndex}`} 
+                      letter={getCorrectLetter(wordIndex, letterIndex)}
+
+                    ></CheckLetter>
                   )
                 }
               </div>
