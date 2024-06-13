@@ -100,17 +100,14 @@ export default function Wordle() {
     }
   }, [currentWord, usedWords])
 
-  const getCorrectLetter = (wordIdx: number, letterIdx: number) => {
-    if (wordIdx === usedWords.length) {
-      if (letterIdx < currentWord.length) {
-        return currentWord[letterIdx]
-      }
-    } else if (wordIdx <= usedWords.length - 1) {
-      if (letterIdx < usedWords[wordIdx].length) {
-        return usedWords[wordIdx][letterIdx]
-      }
+  const getCurrentWord = (wordIdx: number) => {
+    if (usedWords.length < wordIdx) {
+      return usedWords[wordIdx];
+    } else if (usedWords.length === wordIdx) {
+      return currentWord;
+    } else {
+      return null;
     }
-    return null
   }
 
   const updateCurrentWord = (letter: string) => {
@@ -143,10 +140,10 @@ export default function Wordle() {
           {
             [...Array(6)].map((el, wordIndex) => 
               <CheckWord
-                usedWords={usedWords}
                 deconstructedWord={deconstructedWord}
-                currentWord={currentWord}
-
+                word={getCurrentWord(wordIndex)}
+                wordIndex={wordIndex}
+                check={wordIndex < usedWords.length}
               ></CheckWord>
             )
           }
@@ -161,9 +158,7 @@ export default function Wordle() {
 }
 
 interface CheckWordProps {
-  usedWords: Array<string>,
   deconstructedWord: object,
-  currentWord: string,
   word: string | null,
   wordIndex: number,
   check: boolean
@@ -172,16 +167,11 @@ interface CheckWordProps {
 function CheckWord(props: CheckWordProps) {
 
   const getCorrectLetter = (wordIdx: number, letterIdx: number) => {
-    if (wordIdx === props.usedWords.length) {
-      if (letterIdx < props.currentWord.length) {
-        return props.currentWord[letterIdx]
-      }
-    } else if (wordIdx <= props.usedWords.length - 1) {
-      if (letterIdx < props.usedWords[wordIdx].length) {
-        return props.usedWords[wordIdx][letterIdx]
-      }
+    if (props.word === null || props.word === undefined) {
+      return null;
+    } else {
+      return props.word[letterIdx];
     }
-    return null
   }
 
   return (
@@ -191,7 +181,7 @@ function CheckWord(props: CheckWordProps) {
           <CheckLetter 
             key={`letter-${(5*props.wordIndex) + letterIndex}`} 
             letter={getCorrectLetter(props.wordIndex, letterIndex)}
-            check={props.wordIndex <= props.usedWords.length}
+            check={props.check}
           ></CheckLetter>
         )
       }
